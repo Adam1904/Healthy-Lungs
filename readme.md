@@ -18,28 +18,27 @@ A web application that allows the user to check air pollution in his area and se
 ## Setup 🛠️
 - Linux 🐧 / macOS 🍎 version
 ```sh
->
+> pip install requirements.txt
 ```
 - Windows ☁️ version
 ```sh
->
+> pip install -r requirements.txt
 ```
-<ins>Before the first run, ensure that you have on and active ...</ins>
 
 ## How to Run 🚀
 - Linux 🐧 / macOS 🍎 version
 ```sh
->
+> python3 app_runner.py
 ```
 - Windows ☁️ version
 ```sh
->
+> python app_runner.py
 ```
 
 ## Dependiencies 🦺 (also attached in ./requirements.txt)
-- ...
-- ...
-- ...
+- [flask](https://pypi.org/project/Flask/)
+- [requests](https://pypi.org/project/requests/)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
 
 ## Design 📚
 Our web application is largely based on the components provided by Flask framework, and more of its basic operations are used.
