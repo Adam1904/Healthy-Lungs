@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import requests, json
-
 app = Flask(__name__)
 
 
@@ -16,4 +15,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(ssl_context=('cert.pem', 'key.pem'),debug=True, host='0.0.0.0', port=443)
+    app.run(debug=True, host='0.0.0.0', port=443, ssl_context='adhoc')
