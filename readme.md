@@ -35,10 +35,11 @@
 > python app_runner.py
 ```
 
-## Dependiencies 🦺 (also attached in ./requirements.txt)
+## Dependiencies 🦺 (also attached in requirements.txt)
 - [flask](https://pypi.org/project/Flask/)
 - [requests](https://pypi.org/project/requests/)
 - [python-dotenv](https://pypi.org/project/python-dotenv/)
+- [pyopenssl](https://pypi.org/project/pyOpenSSL/)
 
 ## Design 📚
 <p align="justify">Our web application is largely based on the components provided by Flask framework, and more of its basic operations are used.</p>
