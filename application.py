@@ -7,8 +7,7 @@ app = Flask(__name__)
 def getData():
     lon = None
     lat = None
-    url = 'http://ip-api.com/json/' + request.remote_addr
-    print(url)
+    url = 'http://ip-api.com/json/' + request.environ['REMOTE_ADDR']
     r = requests.get(url)
     j = json.loads(r.text)
     if j['status'] == 'fail': # jeżeli doszło do jakiegoś błędu to ustawiamy lokalizacje WEITI
@@ -18,8 +17,6 @@ def getData():
         lat = j['lat']
         lon = j['lon']
 
-    #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    #dotenv_file = os.path.join(BASE_DIR, ".env")
     if os.path.isfile(".env"):
         dotenv.load_dotenv(".env")
     api_key = os.getenv('API_KEY')
