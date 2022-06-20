@@ -28,7 +28,7 @@ def getData():
 
     response = requests.get(url)
     data = json.loads(response.text) # <- z tego trzeba wyciągnąc info o powietrzu
-    info = "the level of o3 in your area is: " + str(data['list'][0]['components'])
+    info = "components: " + str(data['list'][0]['components'])
     return render_template("index.html",text=info)
 
 @app.route("/")
