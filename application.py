@@ -21,11 +21,7 @@ def getData():
         dotenv.load_dotenv(".env")
     api_key = os.getenv('API_KEY')
 
-    # https://openweathermap.org/api/
-    # url = "https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&appid=%s&units=metric" % (lat, lon, api_key) <- general weather
-    # https://openweathermap.org/api/air-pollution
     url = "http://api.openweathermap.org/data/2.5/air_pollution?lat=%s&lon=%s&appid=%s&units=metric" % (lat, lon, api_key)
-
     response = requests.get(url)
     data = json.loads(response.text) # <- z tego trzeba wyciągnąc info o powietrzu
     info = "components: " + str(data['list'][0]['components'])
