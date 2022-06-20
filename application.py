@@ -27,9 +27,8 @@ def getData():
     url = "http://api.openweathermap.org/data/2.5/air_pollution?lat=%s&lon=%s&appid=%s&units=metric" % (lat, lon, api_key)
 
     response = requests.get(url)
-    data = json.loads(response.text)
-    print(data) # <- z tego trzeba wyciągnąc info o powietrzu
-    info = "your lat is: " + lat + ", your lon is: " + lon
+    data = json.loads(response.text) # <- z tego trzeba wyciągnąc info o powietrzu
+    info = "the level of o3 in your area is: " + str(data['list'][0]['components'])
     return render_template("index.html",text=info)
 
 @app.route("/")

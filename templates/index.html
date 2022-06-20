@@ -54,13 +54,13 @@
 			<h1 id="Title">
 					Healthy Lungs
 					<form action="/" method="post">
-						<button name="forwardBtn" type="submit">get localization</button>
+						<div id="result">
+							<!--Position information will be inserted here-->
+						</div>
+						<button name="forwardBtn" type="submit" onclick="showPosition();">Show Position</button>
 						<p><b>{{ text }}</b></p>
 					</form>
-					<div id="result">
-						<!--Position information will be inserted here-->
-					</div>
-					<button type="button" onclick="showPosition();">Show Position</button>
+
 				</h1>
 			<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 			<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_6bn30rnk.json"  background=transparent  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay id="lungs"></lottie-player>
