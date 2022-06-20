@@ -7,7 +7,7 @@ app = Flask(__name__)
 def getData():
     lon = None
     lat = None
-    url = 'http://ip-api.com/json/' + request.environ['REMOTE_ADDR']
+    url = 'http://ip-api.com/json/' + request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
     r = requests.get(url)
     j = json.loads(r.text)
     if j['status'] == 'fail': # jeżeli doszło do jakiegoś błędu to ustawiamy lokalizacje WEITI
