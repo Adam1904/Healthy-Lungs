@@ -13,7 +13,7 @@
 </p>
 
 ## Website view ⛰️
-- [ ]
+- [TODO]
 
 ## Setup 🛠️
 - Linux 🐧 / macOS 🍎 version
