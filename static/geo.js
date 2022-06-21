@@ -44,3 +44,14 @@ $( document ).ready(function() {
         }
     })();
 });
+
+$.ajax({
+    type: "POST",
+    contentType: "application/json; charset=utf-8",
+    url: "/",
+    data: message,
+    success: function (data) {
+      alert("DONE!")
+    },
+    dataType: "json"
+  });
