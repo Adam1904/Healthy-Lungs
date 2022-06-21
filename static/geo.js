@@ -37,16 +37,18 @@ $(document).ready(function () {
                         let co = components['co'];
                         let no = components['no'];
                         let no2 = components['no2'];
-                        let no2Percent = no2/400;
+                        let no2Percent = no2 / 400;
                         let o3 = components['o3'];
-                        let o3Percent = o3/240;
+                        let o3Percent = o3 / 240;
                         let so2 = components['so2'];
                         let pm2_5 = components['pm2_5'];
-                        let pm25Percent = pm2_5/110;
+                        let pm25Percent = pm2_5 / 110;
                         let pm10 = components['pm10'];
-                        let pm10Percent = pm10/180;
+                        let pm10Percent = pm10 / 180;
                         let nh3 = components['nh3'];
                         console.log(co);
+                        a = aqi;
+                        document.getElementById("lungs").src = '../images/lungs' + a + '.png';  /* przekaznie elementów */
                     })
             }
 
