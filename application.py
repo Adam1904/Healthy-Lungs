@@ -40,7 +40,8 @@ def getData():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    url = 'http://ip-api.com/json/' + request.headers.get('X-Forwarded-For', request.remote_addr)
+    return render_template("index.html",test=url)
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
