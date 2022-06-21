@@ -1,6 +1,6 @@
 import os, json, requests, dotenv
 from ssl import OP_NO_TLSv1_3
-from flask import Flask, render_template, request, Markup
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -35,7 +35,6 @@ def getData():
     pm2_5 = components['pm2_5']
     pm10 = components['pm10']
     nh3 = components['nh3']
-    dt = components['dt']
     coord = str("lat: " + lat + ",lon: " + lon)
     return render_template("index.html",aqi=aqi,co=co,no=no,no2=no2,o3=o3,so2=so2,pm2_5=pm2_5,pm10=pm10,nh3=nh3,dt=dt,coord=coord)
 
