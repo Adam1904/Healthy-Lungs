@@ -20,12 +20,22 @@ $( document ).ready(function() {
         // handle success case
         function onSuccess(position) {
             const {
-                latitude,
-                longitude
+               "latitude": latitude,
+               "longitude": longitude
             } = position.coords;
-
+            console.log(typeof(position.coords));
             message.classList.add('success');
             message.textContent = `Your location: (${latitude},${longitude})`;
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "/",
+                data: JSON.stringify(position.coords),
+                success: function (data) {
+                  alert("DONE!")
+                },
+                dataType: "json"
+              });
         }
 
         // handle error case
@@ -44,14 +54,3 @@ $( document ).ready(function() {
         }
     })();
 });
-
-$.ajax({
-    type: "POST",
-    contentType: "application/json; charset=utf-8",
-    url: "/",
-    data: message,
-    success: function (data) {
-      alert("DONE!")
-    },
-    dataType: "json"
-  });
