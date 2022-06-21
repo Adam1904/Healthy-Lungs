@@ -70,7 +70,6 @@ def home():
     pm2_5 = components['pm2_5']
     pm10 = components['pm10']
     nh3 = components['nh3']
-    coord = str("lat: " + lat + ",lon: " + lon)
     test = "your air quality is: " + str(aqi) + ", your ip is:" + str(ip) + ",lat: " + str(lat) + ",lon: " + str(lon)
     return render_template("index.html",test=test)
 
