@@ -3,6 +3,7 @@ $(document).ready(function () {
             const message = document.querySelector('#message');
             const api_key = 'f9911c4c17c1f82709e7ffa49cf4ae30';
 
+
             // check if the Geolocation API is supported
             if (!navigator.geolocation) {
                 message.textContent = `Your browser doesn't support Geolocation`;
@@ -17,7 +18,6 @@ $(document).ready(function () {
                 navigator.geolocation.getCurrentPosition(onSuccess, onError);
             });
 
-
             // handle success case
             function onSuccess(position) {
                 const {
@@ -28,7 +28,7 @@ $(document).ready(function () {
                 message.classList.add('success');
                 message.textContent = `Your location: (${latitude},${longitude})`;
 
-                const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`;
+                const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`;
                 console.log(url);
                 let output = fetch(url).then(result => result.json())
                     .then((data) => {
