@@ -194,18 +194,10 @@ input {
   color: white;
   box-shadow: none;
 }
-.statystyki .ui ul {
-  margin: 0px 30px 10px 0px;
-  padding: 0;
-  list-style-type: none;
-  font-size: 0.733vw;
-  font-weight: 400;
-  line-height: 1.333vw;
-}
 
 .statystyki .ui_box {
   width: 20vw;
-  height: 360px;
+  height: 24vw;
   position: relative;
   /* background: #313B34; */
   float: left;
@@ -216,93 +208,93 @@ input {
   transition-duration: 0.3s;
 }
 .statystyki h2{
-  font-size: 2.4vw;
+  font-size: 3.4vw;
   font-weight: 700;
   color: #ffffff;
-  margin-top: 350px ;
-  margin-bottom: 30px;
+  margin-top: 23.3vw ;
+  margin-bottom: 2vw;
   
 }
 .statystyki .ui_box__inner {
-  padding: 30px;
+  padding: 2vw;
 }
-.statystyki .ui_box__inner span {
+.statystyki .ui_box__inner span,p {
   font-size: 2.4vw;
   font-weight: 700;
   color: #ffffff;
 }
 .statystyki .ui_box__inner h2 {
-  font-size: 2.4vw;
+  font-size: .4vw;
   font-weight: 700;
   color: #ffffff;
 }
 .statystyki .ui_box__inner li {
-  font-size: 0.7vw;
+  font-size: 0.85vw;
   font-weight: 700;
   color: #ffffff;
 }
 .statystyki .ui_box__inner .progress {
   width: 100%;
-  margin-top: 10px;
-  height: 6px;
+  margin-top: 0.66vw;
+  height: 0.4vw;
   background: rgba(0, 0, 0, 0.3);
-  margin-bottom: 15px;
+  margin-bottom: 1vw;
 }
 .statystyki .ui_box__inner .progress_graph {
   float: right;
   border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-  width: 85px;
+  width: 5.66vw;
   text-align: center;
   position: relative;
-  padding-left: 20px;
-  top: 24px;
+  padding-left: 1.33vw;
+  top: 1.6vw;
 }
 .statystyki .ui_box__inner .progress_graph__bar--1 {
-  width: 10px;
-  height: 20px;
+  width: 0.66vw;
+  height: 1.33vw;
   background: #4fa584;
   float: left;
-  margin-right: 10px;
+  margin-right: 0.66vw;
   position: relative;
-  bottom: -10px;
+  bottom: -0.66vw;
   -webkit-animation: graph 1s;
 }
 .statystyki .ui_box__inner .progress_graph__bar--2 {
-  width: 10px;
+  width: 0.66vw;
   -webkit-animation: graph2 1s;
-  height: 30px;
+  height: 2vw;
   float: left;
-  margin-right: 10px;
+  margin-right: 0.66vw;
   background: #4fa584;
 }
 .statystyki .ui_box__inner .progress_graph__bar--3 {
-  width: 10px;
-  height: 24px;
-  margin-right: 10px;
+  width: 0.66vw;
+  height: 1.6vw;
+  margin-right: 0.66vw;
   -webkit-animation: graph3 1s;
   background: #4fa584;
   float: left;
   position: relative;
-  bottom: -6px;
+  bottom: -0.4vw;
 }
 .statystyki .ui_box__inner .progress_graph__bar--4 {
-  width: 10px;
-  height: 14px;
+  width: 0.66vw;
+  height: 0.933vw;
   -webkit-animation: graph4 1s;
-  bottom: -16px;
+  bottom: -1.066vw;
   position: relative;
   background: #4fa584;
   float: left;
 }
 .statystyki .ui_box__inner .progress_bar {
-  height: 6px;
+  height: 0.4vw;
   float: left;
   width: 8%; /*tutaj zmiana procetów */ 
   background: #4fa584;
   -webkit-animation: bar 2s;
 }
 .statystyki .ui_box__inner .progress_bar--two {
-  height: 6px;
+  height: 0.4vw;
   float: left;
   width: 78%;
   background: #4fa584;
@@ -310,16 +302,16 @@ input {
 }
 .statystyki .ui_box h2 {
   font-weight: normal;
-  font-size: 1.066vw;
+  font-size: 1.8vw;
   margin: -4px 0px 3px 0px;
 }
 .statystyki .ui_box p {
-  font-size: 0.733vw;
+  font-size: 1vw;
   color: #b6b6b6;
   clear: left;
   font-weight: 300;
-  width: 160px;
-  margin: 2px 0px 15px 0px;
+  width: 10.66vw;
+  margin: 2px 0px 1vw 0px;
 }
 .statystyki .ui_box:hover {
   background: #4fa584;
@@ -337,7 +329,7 @@ input {
 .ui_box:hover > .drop {
   transition-property: bottom, opacity;
   transition-duration: 0.3s;
-  bottom: -42px;
+  bottom: -2.8vw;
   opacity: 1;
 }
 
@@ -361,8 +353,8 @@ input {
 }
 
 .arrow {
-  width: 4px;
-  height: 4px;
+  width: 0.266vw;
+  height: 0.266vw;
   transition-property: transform;
   transition-duration: 1s;
   transform: rotate(45deg);
@@ -371,7 +363,7 @@ input {
   border-right: 1px solid #cdead3;
   float: right;
   position: relative;
-  top: -24px;
+  top: -1.6vw;
   right: 0px;
 }
 
