@@ -26,16 +26,7 @@ $( document ).ready(function() {
             console.log(typeof(position.coords));
             message.classList.add('success');
             message.textContent = `Your location: (${latitude},${longitude})`;
-            $.ajax({
-                type: "POST",
-                contentType: "application/json; charset=utf-8",
-                url: "/",
-                data: JSON.stringify(position.coords),
-                success: function (data) {
-                  alert("DONE!")
-                },
-                dataType: "json"
-              });
+
         }
 
         // handle error case
