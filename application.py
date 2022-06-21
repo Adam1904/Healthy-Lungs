@@ -36,7 +36,7 @@ def getData():
     pm10 = components['pm10']
     nh3 = components['nh3']
     coord = str("lat: " + lat + ",lon: " + lon)
-    return render_template("index.html",aqi=aqi,co=co,no=no,no2=no2,o3=o3,so2=so2,pm2_5=pm2_5,pm10=pm10,nh3=nh3,dt=dt,coord=coord)
+    return render_template("index.html",aqi=aqi,co=co,no=no,no2=no2,o3=o3,so2=so2,pm2_5=pm2_5,pm10=pm10,nh3=nh3,coord=coord)
 
 @app.route("/")
 def home():
