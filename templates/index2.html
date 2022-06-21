@@ -35,11 +35,12 @@
             		<br>On this site you can check the air condition in your or any selected region. 
             		<br>You can also view the air quality for the last seven days. 
             		<br>And if you use our site not for the first time, you can view the history of saved measurements. 
-            		<br>To get started, choose your location.
+            		<br>To get started, choose location.
             	</span>
             </div>
-            <button id="button-location" class="btn">Enable location</button>
-          	<div id="message"></div>
+						<label for="city-search">Search the city:</label>
+						<input type="search" id="city-search" name="q">
+						<button class="btn" id="search">Search</button>
     		</div>
     	<div class="lungs">
     		<img src="../images/lungs0.png" id="lungs"></img>
@@ -237,6 +238,6 @@
         	</div >	
 		</div>
 <!--<script src="{{ url_for('static', filename='geo.js') }}"></script>-->
-<script src="../static/geo.js"></script>
+<script src="/static/geo.js"></script>
 </body>
 </html>
