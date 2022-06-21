@@ -6,8 +6,15 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET','POST'])
 def getData():
-    lat = None
-    lon = None
+    if request.method == 'POST':
+        data = request.get_json()
+        lon = data['longitude']
+        lat = data['latitude']
+    else:
+        lat = None
+        lon = None
+    #lon = request.get_json().get('longitude')
+    #lat = request.get_json().get('latitude')
     url = 'http://ip-api.com/json/' + request.headers.get('X-Forwarded-For', request.remote_addr).split(":")[0]
     r = requests.get(url)
     j = json.loads(r.text)
