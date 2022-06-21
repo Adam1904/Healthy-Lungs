@@ -1,6 +1,4 @@
-import os, json, requests, dotenv
-from ssl import OP_NO_TLSv1_3
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
