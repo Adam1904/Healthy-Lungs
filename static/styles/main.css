@@ -7,14 +7,8 @@ body{
   margin: 0;
   padding: 0;
   background: #313B34;
+  font-weight: 800;
 }
-
-
-
-
-
-
-
 
 
 
@@ -28,7 +22,7 @@ body{
 .container{
   position: absolute;
   z-index: 2;
-  margin-top: 4vw;
+  margin-top: 1vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 6.66vw 6.66vw;
@@ -62,18 +56,18 @@ body{
   opacity: 1;
 }
 /* START BUTTON */
-#button-location {
-  grid-column: 3;
-  grid-row: 4;
-  animation: subtext 4s 1;
-  opacity: 1;
-}
 #message {
   grid-column: 4 / 6;
   grid-row: 4;
   color: #ffffff;
+  font-size: 1.2vw;
+  font-weight: 40;
 }
 .btn {
+  grid-column: 3;
+  grid-row: 4;
+  animation: subtext 4s 1;
+  opacity: 1;
   width: 13.33vw;
   height: 2vw;
   transition-duration: 0.3s;
@@ -92,6 +86,31 @@ body{
   color: white;
 }
 /* END BUTTON */
+/* START CHOOSE */
+label {
+  grid-column: 2;
+  grid-row: 4;
+  animation: subtext 4s 1;
+  opacity: 1;
+  margin-left: 6vw;
+  color: #ffffff;
+  font-size: 1.2vw;
+  font-weight: 40;
+}
+#search {
+  grid-column: 2/4;
+  grid-row: 5;
+  width: 10vw;
+  margin-left: 5.5vw;
+}
+input {
+  grid-column: 3;
+  grid-row: 4;
+  animation: subtext 4s 1;
+  opacity: 1;
+  width: 13.33vw;
+}
+/* END CHOOSE*/
 @keyframes text {
   0%{
     color: #313B34;
@@ -186,7 +205,7 @@ body{
 
 .statystyki .ui_box {
   width: 20vw;
-  height: 320px;
+  height: 360px;
   position: relative;
   /* background: #313B34; */
   float: left;
@@ -196,12 +215,31 @@ body{
   transition-property: transform, background;
   transition-duration: 0.3s;
 }
+.statystyki h2{
+  font-size: 2.4vw;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 350px ;
+  margin-bottom: 30px;
+  
+}
 .statystyki .ui_box__inner {
   padding: 30px;
 }
 .statystyki .ui_box__inner span {
   font-size: 2.4vw;
   font-weight: 700;
+  color: #ffffff;
+}
+.statystyki .ui_box__inner h2 {
+  font-size: 2.4vw;
+  font-weight: 700;
+  color: #ffffff;
+}
+.statystyki .ui_box__inner li {
+  font-size: 0.7vw;
+  font-weight: 700;
+  color: #ffffff;
 }
 .statystyki .ui_box__inner .progress {
   width: 100%;
@@ -437,7 +475,63 @@ body{
 /* END STATYSTYKI*/
 
 
+/* START TOP-BAR */
+.top_bar{
+  width: 80%;
+  margin: 0 auto;
+  /* background-color:#00790D; */
 
+}
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.nav {
+  float:right;
+  z-index: 2;
+  position:relative;
+}
+.nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+  margin-left: 4.5vw;
+  padding-top: 1.5vw;
+  position: relative;
+}
+.nav a {
+  color:#ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.15vw;
+}
+.nav a:hover{
+  color:#111111;
+  
+}
+
+.nav a::before{
+  content: '';
+  display: block;
+  height: 0.333vw;
+  width:100%;
+  background-color: #5eda80;
+
+  position: absolute;
+  top:0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+.nav:hover::before {
+  width: 100%;
+}
+/* END TOP-BAR */
 
 
 
