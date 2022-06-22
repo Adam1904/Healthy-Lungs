@@ -4,19 +4,27 @@ $(document).ready(function () {
             const search = document.getElementById("city-search");
             const api_key = "f9911c4c17c1f82709e7ffa49cf4ae30";
             var cities = null;
+            var citiesPL = null;
             fetch("../static/scripts/cities.json")
                 .then(function (resp) {
                     return resp.json();
                 })
                 .then(function (data) {
                     cities = data;
-                    setTimeout(wczytanielisty, 1000);
+                })
+            fetch("../static/scripts/polish_cities.json")
+                .then(function (resp) {
+                    return resp.json();
+                })
+                .then(function (data) {
+                    citiesPL = data;
+                    setTimeout(wczytanielisty, 100);
                 })
             var cityList = new Array();
 
             function wczytanielisty() {
-                for (i = 0; i < cities.length; i++) {
-                    cityList.push(cities[i]['name']);
+                for (i = 0; i < citiesPL.length; i++) {
+                    cityList.push(citiesPL[i]['name']);
                 }
             }
 
@@ -57,10 +65,7 @@ $(document).ready(function () {
                 if (event.key === "Enter") {
                     btn.click();
                 }
-                if (search.value.length >= 4) {
-                    if (search.value.length <= 3) {
-                        event.preventDefault();
-                    }
+                if (search.value.length >= 3) {
                     $("#city-search").autocomplete({
                         source: cityList
                     })
