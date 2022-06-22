@@ -4,10 +4,10 @@ $(document).ready(function () {
             const api_key = "f9911c4c17c1f82709e7ffa49cf4ae30";
             var cities = null;
             fetch("../static/scripts/cities.json")
-                .then(function(resp){
+                .then(function (resp) {
                     return resp.json();
                 })
-                .then(function(data){
+                .then(function (data) {
                     cities = data;
                 })
 
@@ -26,22 +26,30 @@ $(document).ready(function () {
                 console.log(enteredCity);
                 var lat = null;
                 var lon = null;
-                for(i=0;i<cities.length;i++){
-                    if(enteredCity == cities[i]['name']){
+                for (i = 0; i < cities.length; i++) {
+                    if (enteredCity == cities[i]['name']) {
                         lat = cities[i]['lat'];
                         lon = cities[i]['lat'];
                     }
                 }
-                if(lat == null || lon == null){
+                if (lat == null || lon == null) {
                     message.textContent = "Cannot find this city, current location is set to (52.21942,21.01177)"
                     lat = "52.219428975996706"  // if there is not such city, set location to our Faculty
                     lon = "21.011772669314333"
                 }
-                onSuccess(lat,lon)
+                onSuccess(lat, lon)
+            });
+
+            const search = document.getElementById("city-search");
+            search.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    btn.click();
+                }
+
             });
 
             // handle success case
-            function onSuccess(lat,lon) {
+            function onSuccess(lat, lon) {
                 const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${api_key}&units=metric`;
                 console.log(url);
                 let output = fetch(url).then(result => result.json())
@@ -53,7 +61,7 @@ $(document).ready(function () {
                         let o3 = components['o3'];
                         let o3Percent = (o3 / 240).toFixed(2);
                         let pm2_5 = components['pm2_5'];
-                        let pm25Percent =(pm2_5 / 110).toFixed(2);
+                        let pm25Percent = (pm2_5 / 110).toFixed(2);
                         let pm10 = components['pm10'];
                         let pm10Percent = (pm10 / 180).toFixed(2);
                         a = aqi;
@@ -67,8 +75,8 @@ $(document).ready(function () {
                     })
                 // Making history
                 let start = new Date();
-                start.setDate(start.getDate()-7);
-                start = Math.floor(start.getTime()/1000);
+                start.setDate(start.getDate() - 7);
+                start = Math.floor(start.getTime() / 1000);
                 console.log(start);
                 const end = Date.now();
                 const urlH = `https://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lon}&start=${start}&end=${end}&appid=${api_key}`
@@ -94,4 +102,5 @@ $(document).ready(function () {
                     })
             }
         }
-)();});
+    )();
+});
