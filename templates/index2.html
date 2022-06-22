@@ -39,7 +39,7 @@
         <label for="city-search">Search the city:</label>
         <input type="search" id="city-search" name="q">
         <button class="btn" id="search">Search</button>
-        <div id="message"></div>
+        <div style="position:absolute" id="message"></div>
     </div>
     <div class="lungs">
         <img src="{{ url_for('static',filename='/images/lungs0.png') }}" id="lungs"></img>
@@ -71,7 +71,7 @@
             <div class='ui_box'>
                 <div class='ui_box__inner'>
                     <h2>
-                        PM <sub>10</sub>
+                        PM<sub>10</sub>
                     </h2>
                     <p>Particulate matter includes particles less than 10µm in diameter.</p>
                     <div class='stat'>
