@@ -9,8 +9,17 @@ $(document).ready(function () {
                 })
                 .then(function (data) {
                     cities = data;
+                    setTimeout(wczytanielisty,1000);
                 })
-
+            var cityList = new Array();
+            function wczytanielisty(){
+                for (i = 0; i < cities.length; i++) {
+                cityList.push(cities[i]['name']);
+            }
+            }
+            $("#city-search").autocomplete({
+                source: cityList
+            });
             // check if the Geolocation API is supported
             if (!navigator.geolocation) {
                 message.textContent = `Your browser doesn't support Geolocation`;
@@ -27,6 +36,7 @@ $(document).ready(function () {
                 console.log(enteredCity);
                 var lat = null;
                 var lon = null;
+                console.log(cities);
                 for (i = 0; i < cities.length; i++) {
                     if (enteredCity == cities[i]['name']) {
                         lat = cities[i]['lat'];
