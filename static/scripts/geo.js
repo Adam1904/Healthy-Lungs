@@ -35,13 +35,13 @@ $(document).ready(function () {
                         let aqi = data['list'][0]['main']['aqi'];
                         let components = data['list'][0]['components'];
                         let no2 = components['no2'];
-                        let no2Percent = no2 / 400;
+                        let no2Percent = (no2 / 400).toFixed(2);
                         let o3 = components['o3'];
-                        let o3Percent = o3 / 240;
+                        let o3Percent = (o3 / 240).toFixed(2);
                         let pm2_5 = components['pm2_5'];
-                        let pm25Percent = pm2_5 / 110;
+                        let pm25Percent =(pm2_5 / 110).toFixed(2);
                         let pm10 = components['pm10'];
-                        let pm10Percent = pm10 / 180;
+                        let pm10Percent = (pm10 / 180).toFixed(2);
                         a = aqi;
 
                         // passing air pollution level to index.html and index2.html
