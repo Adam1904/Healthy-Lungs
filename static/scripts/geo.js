@@ -35,25 +35,26 @@ $(document).ready(function () {
                         let aqi = data['list'][0]['main']['aqi'];
                         let components = data['list'][0]['components'];
                         let co = components['co'];
-                        let no = components['no'];
                         let no2 = components['no2'];
                         let no2Percent = no2 / 400;
                         let o3 = components['o3'];
                         let o3Percent = o3 / 240;
-                        let so2 = components['so2'];
                         let pm2_5 = components['pm2_5'];
                         let pm25Percent = pm2_5 / 110;
                         let pm10 = components['pm10'];
                         let pm10Percent = pm10 / 180;
-                        let nh3 = components['nh3'];
-                        console.log(co);
                         a = aqi;
+
                         // przekaznie elementów do index.html i index2.html
                         document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";
-                        document.getElementById("no2").src = no2Percent + "%";
-                        document.getElementById("pm10").src = pm10Percent + "%";
-                        document.getElementById("o3").src = o3Percent + "%";
-                        document.getElementById("pm25").src = pm25Percent + "%";
+                        element_no2 = document.getElementById("no2").src;
+                        element_no2.textContent = no2Percent + "%";
+                        element_pm10 = document.getElementById("pm10").src;
+                        element_pm10.textContent = pm10Percent + "%";
+                        element_o3 = document.getElementById("o3").src;
+                        element_o3.textContent = o3Percent + "%";
+                        element_pm25 = document.getElementById("pm25").src;
+                        element_pm25.textContent = pm25Percent + "%";
                     })
             }
 
