@@ -48,7 +48,12 @@ $(document).ready(function () {
                         let nh3 = components['nh3'];
                         console.log(co);
                         a = aqi;
-                        document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";  // przekaznie elementów
+                        // przekaznie elementów do index.html i index2.html
+                        document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";
+                        document.getElementById("no2").src = no2Percent + "%";
+                        document.getElementById("pm10").src = pm10Percent + "%";
+                        document.getElementById("o3").src = o3Percent + "%";
+                        document.getElementById("pm25").src = pm25Percent + "%";
                     })
             }
 
