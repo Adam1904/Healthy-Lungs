@@ -34,14 +34,30 @@ $(document).ready(function () {
                     .then((data) => {
                         let aqi = data['list'][0]['main']['aqi'];
                         let components = data['list'][0]['components'];
+
                         let no2 = components['no2'];
                         let no2Percent = (no2 / 4).toFixed(2);
+                        if (no2Percent >= 100) {
+                            no2Percent = 100
+                        }
+
                         let o3 = components['o3'];
                         let o3Percent = (o3 / 2.4).toFixed(2);
+                        if (o3Percent >= 100) {
+                            o3Percent = 100
+                        }
+
                         let pm2_5 = components['pm2_5'];
                         let pm25Percent = (pm2_5 / 1.1).toFixed(2);
+                        if (pm25Percent >= 100) {
+                            pm25Percent = 100
+                        }
+
                         let pm10 = components['pm10'];
                         let pm10Percent = (pm10 / 1.8).toFixed(2);
+                        if (pm10Percent >= 100) {
+                            pm10Percent = 100
+                        }
                         a = aqi;
 
                         document.getElementById("pb_no2_now").style.width = no2Percent + "%"
@@ -68,14 +84,30 @@ $(document).ready(function () {
                     .then((data) => {
                         let aqi = data['list'][0]['main']['aqi'];
                         let components = data['list'][0]['components'];
+
                         let no2 = components['no2'];
                         let no2Percent = (no2 / 4).toFixed(2);
+                        if (no2Percent >= 100) {
+                            no2Percent = 100
+                        }
+
                         let o3 = components['o3'];
                         let o3Percent = (o3 / 2.4).toFixed(2);
+                        if (o3Percent >= 100) {
+                            o3Percent = 100
+                        }
+
                         let pm2_5 = components['pm2_5'];
                         let pm25Percent = (pm2_5 / 1.1).toFixed(2);
+                        if (pm25Percent >= 100) {
+                            pm25Percent = 100
+                        }
+
                         let pm10 = components['pm10'];
                         let pm10Percent = (pm10 / 1.8).toFixed(2);
+                        if (pm10Percent >= 100) {
+                            pm10Percent = 100
+                        }
                         a = aqi;
 
                         document.getElementById("pb_no2_mean").style.width = no2Percent + "%"
