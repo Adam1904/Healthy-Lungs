@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="shortcut icon" type="x-icon"  href="{{ url_for('static',filename='logo.png') }}">
+	<link rel="shortcut icon" type="x-icon"  href="{{ url_for('static',filename='/images/logo.png') }}">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="{{ url_for('static',filename='/styles/main.css') }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
 				</div>
 			</header>
     		<div class="container">
-        		<img src="{{ url_for('static',filename='logo.png') }}" id="logo"> </img>
+        		<img src="{{ url_for('static',filename='/images/logo.png') }}" id="logo"> </img>
         		<div id = "title">
         			<span class="title">Healthy Lungs</span>
         			<span class="subtitle">Hello!
@@ -40,8 +40,8 @@
           	<div id="message"></div>
     		</div>
     	<div class="lungs">
-    		<img src="{{ url_for('static',filename='lungs0.png') }}" id="lungs"></img>
-    		<img src="{{ url_for('static',filename='legenda.png') }}" id="legenda"> </img>
+    		<img src="{{ url_for('static',filename='/images/lungs0.png') }}" id="lungs"></img>
+    		<img src="{{ url_for('static',filename='/images/legenda.png') }}" id="legenda"> </img>
 			</div>
 			<div class="statystyki">
 				<div class='ui'>
@@ -234,6 +234,6 @@
               </ul>
         	</div >
 		</div>
-<script src="{{ url_for('static', filename='geo.js') }}"></script>
+<script src="{{ url_for('static', filename='/scripts/geo.js') }}"></script>
 </body>
 </html>
