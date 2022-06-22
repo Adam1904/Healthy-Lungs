@@ -1,240 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="shortcut icon" type="x-icon"  href="{{ url_for('static',filename='/images/logo.png') }}">
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="{{ url_for('static',filename='/styles/main.css') }}">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" href="{{ url_for('static',filename='/images/logo.png') }}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='/styles/main.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<title>
-		HealthyLungs
-	</title>
+    <title>
+        HealthyLungs
+    </title>
 </head>
 <body>
-		<div class="main_frame">
-			<header>
-				<div class="top_bar">
-					<nav class="nav">
-						<ul>
-							<li><a href="{{ url_for('home') }}">Your location</a></li>
-							<li><a href="{{ url_for('choose_location') }}">Choose location</a></li>
-						</ul>
-					</nav>
-				</div>
-			</header>
-    		<div class="container">
-        		<img src="{{ url_for('static',filename='/images/logo.png') }}" id="logo"> </img>
-        		<div id = "title">
-        			<span class="title">Healthy Lungs</span>
-        			<span class="subtitle">Hello!
+<div class="main_frame">
+    <header>
+        <div class="top_bar">
+            <nav class="nav">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Your location</a></li>
+                    <li><a href="{{ url_for('choose_location') }}">Choose location</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <img src="{{ url_for('static',filename='/images/logo.png') }}" id="logo"> </img>
+        <div id="title">
+            <span class="title">Healthy Lungs</span>
+            <span class="subtitle">Hello!
             		<br>On this site you can check the air condition in your or any selected region.
             		<br>You can also view the air quality for the last seven days.
             		<br>And if you use our site not for the first time, you can view the history of saved measurements.
             		<br>To get started, choose location.
             	</span>
+        </div>
+        <label for="city-search">Search the city:</label>
+        <input type="search" id="city-search" name="q">
+        <button class="btn" id="search">Search</button>
+    </div>
+    <div class="lungs">
+        <img src="{{ url_for('static',filename='/images/lungs0.png') }}" id="lungs"></img>
+        <img src="{{ url_for('static',filename='/images/legenda.png') }}" id="legenda"> </img>
+    </div>
+    <div class="statystyki">
+        <div class='ui'>
+            <div class='ui_box'>
+                <div class='ui_box__inner'>
+                    <h2>
+                        NO<sub>2</sub>
+                    </h2>
+                    <p>Nitrogen Dioxide</p>
+                    <div class='stat'>
+                        <span id="no2">NULL</span>
+                    </div>
+                    <div class='progress'>
+                        <div class='progress_bar'></div>
+                    </div>
+                    <ul>
+                        <li>Good - 0 - 50</li>
+                        <li>Fair - 50 - 100</li>
+                        <li>Moderate - 100 - 200</li>
+                        <li>Poor - 200 - 400</li>
+                        <li>Very Poor - >400</li>
+                    </ul>
+                </div>
             </div>
-						<label for="city-search">Search the city:</label>
-						<input type="search" id="city-search" name="q">
-						<button class="btn" id="search">Search</button>
-    		</div>
-    	<div class="lungs">
-    		<img src="{{ url_for('static',filename='/images/lungs0.png') }}" id="lungs"></img>
-    		<img src="{{ url_for('static',filename='/images/legenda.png') }}" id="legenda"> </img>
-			</div>
-			<div class="statystyki">
-				<div class='ui'>
-  				<div class='ui_box'>
-    				<div class='ui_box__inner'>
-      				<h2>
-				        NO<sub>2</sub>
-				      </h2>
-				      <p>Nitrogen Dioxide</p>
-				      <div class='stat' id="no2">
-				        <span>NULL</span>
-				      </div>
-				      <div class='progress'>
-				        <div class='progress_bar'></div>
-				      </div>
-				      <ul>
-							<li>Good - 0% - 12,5%</li>
-							<li>Fair - 12,5% - 25%</li>
-							<li>Moderate - 25% - 50%</li>
-							<li>Poor - 50% - 100%</li>
-							<li>Very Poor - >100% </li>
-					  </ul>
-				    </div>
-				  </div>
-				  <div class='ui_box'>
-    				<div class='ui_box__inner'>
-      				<h2>
-				        PM <sub>10</sub>
-				      </h2>
-				      <p>Particulate matter includes particles less than 10µm in diameter.</p>
-				      <div class='stat' id="pm10">
-				        <span>NULL</span>
-				      </div>
-				      <div class='progress'>
-				        <div class='progress_bar'></div>
-				      </div>
-				      <ul>
-						<li>Good - 0% - 14%</li>
-						<li>Fair - 14% - 28%</li>
-						<li>Moderate - 28% - 50%</li>
-						<li>Poor - 50% - 100%</li>
-						<li>Very Poor - >100% </li>
-				  </ul>
-				    </div>
-				  </div>
-				  <div class='ui_box'>
-    				<div class='ui_box__inner'>
-      				<h2>
-				        O<sub>3</sub>
-				      </h2>
-				      <p>Trioxygen</p>
-				      <div class='stat' id="o3">
-				        <span>NULL</span>
-				      </div>
-				      <div class='progress'>
-				        <div class='progress_bar'></div>
-				      </div>
-					  <ul>
-						<li>Good - 0% - 25%</li>
-						<li>Fair - 25% - 50%</li>
-						<li>Moderate - 50% - 75%</li>
-						<li>Poor - 75% - 100%</li>
-						<li>Very Poor - >100% </li>
-					  </ul>
-				    </div>
-				  </div>
-				  <div class='ui_box'>
-    				<div class='ui_box__inner'>
-      				<h2>
-				        PM<sub>2.5</sub>
-				      </h2>
-				      <p>Particulate matter includes particles less than 2.5µm in diameter.</p>
-				      <div class='stat' id="pm25">
-				        <span>NULL</span>
-				      </div>
-				      <div class='progress'>
-				        <div class='progress_bar'></div>
-				      </div>
-				      <ul>
-						<li>Good - 0% - 13,6%</li>
-						<li>Fair - 13,6% - 27,2%</li>
-						<li>Moderate - 27,2% - 50%</li>
-						<li>Poor - 50% - 100%</li>
-						<li>Very Poor - >100% </li>
-					  </ul>
-				    </div>
-				  </div>
+            <div class='ui_box'>
+                <div class='ui_box__inner'>
+                    <h2>
+                        PM <sub>10</sub>
+                    </h2>
+                    <p>Particulate matter includes particles less than 10µm in diameter.</p>
+                    <div class='stat'>
+                        <span id="pm10">NULL</span>
+                    </div>
+                    <div class='progress'>
+                        <div class='progress_bar'></div>
+                    </div>
+                    <ul>
+                        <li>Good - 0 - 25</li>
+                        <li>Fair - 25 - 50</li>
+                        <li>Moderate - 50 - 90</li>
+                        <li>Poor - 90 - 180</li>
+                        <li>Very Poor - >180</li>
+                    </ul>
+                </div>
+            </div>
+            <div class='ui_box'>
+                <div class='ui_box__inner'>
+                    <h2>
+                        O<sub>3</sub>
+                    </h2>
+                    <p>Trioxygen</p>
+                    <div class='stat'>
+                        <span id="o3">NULL</span>
+                    </div>
+                    <div class='progress'>
+                        <div class='progress_bar'></div>
+                    </div>
+                    <ul>
+                        <li>Good - 0 - 60</li>
+                        <li>Fair - 60 - 120</li>
+                        <li>Moderate - 120 - 180</li>
+                        <li>Poor - 180 - 240</li>
+                        <li>Very Poor - >240</li>
+                    </ul>
+                </div>
+            </div>
+            <div class='ui_box'>
+                <div class='ui_box__inner'>
+                    <h2>
+                        PM<sub>2.5</sub>
+                    </h2>
+                    <p>Particulate matter includes particles less than 2.5µm in diameter.</p>
+                    <div class='stat'>
+                        <span id="pm25">NULL</span>
+                    </div>
+                    <div class='progress'>
+                        <div class='progress_bar'></div>
+                    </div>
+                    <ul>
+                        <li>Good - 0 - 15</li>
+                        <li>Fair - 15 - 30</li>
+                        <li>Moderate - 30 - 55</li>
+                        <li>Poor - 55 - 110</li>
+                        <li>Very Poor - >110</li>
+                    </ul>
+                </div>
+            </div>
 
-				</div>
-				<h2> <br> Mean from the last week</h2>
-				<div class='ui_box'>
-    				<div class='ui_box__inner'>
-      				<h2>
-				        NO<sub>2</sub>
-				      </h2>
-				      <p>Nitrogen Dioxide</p>
-				      <div class='stat' id="no2">
-				        <span>NULL</span>
-				      </div>
-				      <div class='progress'>
-				        <div class='progress_bar'></div>
-				      </div>
-				      <ul>
-							<li>Good - 0% - 12,5%</li>
-							<li>Fair - 12,5% - 25%</li>
-							<li>Moderate - 25% - 50%</li>
-							<li>Poor - 50% - 100%</li>
-							<li>Very Poor - >100% </li>
-					  </ul>
-				    </div>
-				  </div>
-				  <div class='ui_box'>
-    				<div class='ui_box__inner'>
-      				<h2>
-				        PM <sub>10</sub>
-				      </h2>
-				      <p>Particulate matter includes particles less than 10µm in diameter.</p>
-				      <div class='stat' id="pm10">
-				        <span>NULL</span>
-				      </div>
-				      <div class='progress'>
-				        <div class='progress_bar'></div>
-				      </div>
-				      <ul>
-						<li>Good - 0% - 14%</li>
-						<li>Fair - 14% - 28%</li>
-						<li>Moderate - 28% - 50%</li>
-						<li>Poor - 50% - 100%</li>
-						<li>Very Poor - >100% </li>
-				  </ul>
-				    </div>
-				  </div>
-				  <div class='ui_box'>
-    				<div class='ui_box__inner'>
-      				<h2>
-				        O<sub>3</sub>
-				      </h2>
-				      <p>Trioxygen</p>
-				      <div class='stat' id="o3">
-				        <span>NULL</span>
-				      </div>
-				      <div class='progress'>
-				        <div class='progress_bar'></div>
-				      </div>
-					  <ul>
-						<li>Good - 0% - 25%</li>
-						<li>Fair - 25% - 50%</li>
-						<li>Moderate - 50% - 75%</li>
-						<li>Poor - 75% - 100%</li>
-						<li>Very Poor - >100% </li>
-					  </ul>
-				    </div>
-				  </div>
-				  <div class='ui_box'>
-    				<div class='ui_box__inner'>
-      				<h2>
-				        PM<sub>2.5</sub>
-				      </h2>
-				      <p>Particulate matter includes particles less than 2.5µm in diameter.</p>
-				      <div class='stat' id="pm25">
-				        <span>NULL</span>
-				      </div>
-				      <div class='progress'>
-				        <div class='progress_bar'></div>
-				      </div>
-				      <ul>
-						<li>Good - 0% - 13,6%</li>
-						<li>Fair - 13,6% - 27,2%</li>
-						<li>Moderate - 27,2% - 50%</li>
-						<li>Poor - 50% - 100%</li>
-						<li>Very Poor - >100% </li>
-					  </ul>
-				    </div>
-				  </div>
+        </div>
+        <h2><br> Mean from the last week</h2>
+        <div class='ui_box'>
+            <div class='ui_box__inner'>
+                <h2>
+                    NO<sub>2</sub>
+                </h2>
+                <p>Nitrogen Dioxide</p>
+                <div class='stat'>
+                    <span id="no2mean">NULL</span>
+                </div>
+                <div class='progress'>
+                    <div class='progress_bar'></div>
+                </div>
+                <ul>
+                    <li>Good - 0 - 50</li>
+                    <li>Fair - 50 - 100</li>
+                    <li>Moderate - 100 - 200</li>
+                    <li>Poor - 200 - 400</li>
+                    <li>Very Poor - >400</li>
+                </ul>
+            </div>
+        </div>
+        <div class='ui_box'>
+            <div class='ui_box__inner'>
+                <h2>
+                    PM <sub>10</sub>
+                </h2>
+                <p>Particulate matter includes particles less than 10µm in diameter.</p>
+                <div class='stat'>
+                    <span id="pm10mean">NULL</span>
+                </div>
+                <div class='progress'>
+                    <div class='progress_bar'></div>
+                </div>
+                <ul>
+                    <li>Good - 0 - 25</li>
+                    <li>Fair - 25 - 50</li>
+                    <li>Moderate - 50 - 90</li>
+                    <li>Poor - 90 - 180</li>
+                    <li>Very Poor - >180</li>
+                </ul>
+            </div>
+        </div>
+        <div class='ui_box'>
+            <div class='ui_box__inner'>
+                <h2>
+                    O<sub>3</sub>
+                </h2>
+                <p>Trioxygen</p>
+                <div class='stat'>
+                    <span id="o3mean">NULL</span>
+                </div>
+                <div class='progress'>
+                    <div class='progress_bar'></div>
+                </div>
+                <ul>
+                    <li>Good - 0 - 60</li>
+                    <li>Fair - 60 - 120</li>
+                    <li>Moderate - 120 - 180</li>
+                    <li>Poor - 180 - 240</li>
+                    <li>Very Poor - >240</li>
+                </ul>
+            </div>
+        </div>
+        <div class='ui_box'>
+            <div class='ui_box__inner'>
+                <h2>
+                    PM<sub>2.5</sub>
+                </h2>
+                <p>Particulate matter includes particles less than 2.5µm in diameter.</p>
+                <div class='stat'>
+                    <span id="pm25mean">NULL</span>
+                </div>
+                <div class='progress'>
+                    <div class='progress_bar'></div>
+                </div>
+                <ul>
+                    <li>Good - 0 - 15</li>
+                    <li>Fair - 15 - 30</li>
+                    <li>Moderate - 30 - 55</li>
+                    <li>Poor - 55 - 110</li>
+                    <li>Very Poor - >110</li>
+                </ul>
+            </div>
+        </div>
 
-				</div>
-			</div>
-      		<div class="area" >
-              <ul class="circles">
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-              </ul>
-        	</div >
-		</div>
+    </div>
+</div>
+<div class="area">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</div>
 <script src="{{ url_for('static', filename='/scripts/geo_cities.js') }}"></script>
 </body>
 </html>

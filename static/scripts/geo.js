@@ -39,19 +39,22 @@ $(document).ready(function () {
                         let o3 = components['o3'];
                         let o3Percent = (o3 / 240).toFixed(2);
                         let pm2_5 = components['pm2_5'];
-                        let pm25Percent =(pm2_5 / 110).toFixed(2);
+                        let pm25Percent = (pm2_5 / 110).toFixed(2);
                         let pm10 = components['pm10'];
                         let pm10Percent = (pm10 / 180).toFixed(2);
                         a = aqi;
 
                         // passing air pollution level to index.html and index2.html
                         document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";
-                        document.getElementById("no2").innerHTML = no2Percent + "%";
-                        document.getElementById("pm10").innerHTML = pm10Percent + "%";
-                        document.getElementById("o3").innerHTML = o3Percent + "%";
-                        document.getElementById("pm25").innerHTML = pm25Percent + "%";
+                        document.getElementById("no2").innerHTML = no2;
+                        document.getElementById("pm10").innerHTML = pm10;
+                        document.getElementById("o3").innerHTML = o3;
+                        document.getElementById("pm25").innerHTML = pm2_5;
                     })
+                // Making history
+
             }
+
 
             // handle error case
             function onError() {
