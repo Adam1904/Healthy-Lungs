@@ -58,7 +58,7 @@ $(document).ready(function () {
                     btn.click();
                 }
                 if (search.value.length >= 4) {
-                    if (search.value.length <= 1) {
+                    if (search.value.length <= 3) {
                         event.preventDefault();
                     }
                     $("#city-search").autocomplete({
