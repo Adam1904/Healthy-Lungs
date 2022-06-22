@@ -33,7 +33,7 @@ $(document).ready(function () {
                     }
                 }
                 if(lat == null || lon == null){
-                    alert("There is not such city in our database!, current location is set to (52.21942,21.01177)")
+                    message.textContent = "There is not such city in our database!, current location is set to (52.21942,21.01177)"
                     lat = "52.219428975996706"  // if there is not such city, set location to our Faculty
                     lon = "21.011772669314333"
                 }
