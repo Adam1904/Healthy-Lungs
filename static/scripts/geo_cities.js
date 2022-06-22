@@ -65,6 +65,30 @@ $(document).ready(function () {
                         document.getElementById("o3").innerHTML = o3;
                         document.getElementById("pm25").innerHTML = pm2_5;
                     })
+                // Making history
+                const start = Date.now() - 604800;
+                const end = Date.now();
+                const urlH = `https://api.openweathermap.org/data/2.5/air_pollution/history?lat=${latitude}&lon=${longitude}&start=${start}&end=${end}&appid=${api_key}`
+
+                let outputH = fetch(urlH).then(result => result.json())
+                    .then((data) => {
+                        let aqi = data['list'][0]['main']['aqi'];
+                        let components = data['list'][0]['components'];
+                        let no2 = components['no2'];
+                        let no2Percent = (no2 / 400).toFixed(2);
+                        let o3 = components['o3'];
+                        let o3Percent = (o3 / 240).toFixed(2);
+                        let pm2_5 = components['pm2_5'];
+                        let pm25Percent = (pm2_5 / 110).toFixed(2);
+                        let pm10 = components['pm10'];
+                        let pm10Percent = (pm10 / 180).toFixed(2);
+                        a = aqi;
+
+                        document.getElementById("no2mean").innerHTML = no2;
+                        document.getElementById("pm10mean").innerHTML = pm10;
+                        document.getElementById("o3mean").innerHTML = o3;
+                        document.getElementById("pm25mean").innerHTML = pm2_5;
+                    })
             }
         }
 )();});
