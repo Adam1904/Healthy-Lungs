@@ -48,13 +48,9 @@ $(document).ready(function () {
                         // przekaznie elementów do index.html i index2.html
                         document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";
                         document.getElementById("no2").innerHTML = no2Percent + "%";
-
-                        element_pm10 = document.getElementById("pm10").src;
-                        element_pm10.textContent = pm10Percent + "%";
-                        element_o3 = document.getElementById("o3").src;
-                        element_o3.textContent = o3Percent + "%";
-                        element_pm25 = document.getElementById("pm25").src;
-                        element_pm25.textContent = pm25Percent + "%";
+                        document.getElementById("pm10").innerHTML = pm10Percent + "%";
+                        document.getElementById("o3").innerHTML = o3Percent + "%";
+                        document.getElementById("pm25").innerHTML = pm25Percent + "%";
                     })
             }
 
