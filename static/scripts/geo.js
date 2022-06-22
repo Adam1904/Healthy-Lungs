@@ -10,12 +10,13 @@ $(document).ready(function () {
                 return;
             }
 
-            // handle click event
+            // handle click event yours location
             const btn = document.querySelector('#button-location');
             btn.addEventListener('click', function () {
                 // get the current position
                 navigator.geolocation.getCurrentPosition(onSuccess, onError);
             });
+
 
             // handle success case
             function onSuccess(position) {
@@ -31,10 +32,8 @@ $(document).ready(function () {
                 console.log(url);
                 let output = fetch(url).then(result => result.json())
                     .then((data) => {
-                        console.log('Output: ', data);
                         let aqi = data['list'][0]['main']['aqi'];
                         let components = data['list'][0]['components'];
-                        let co = components['co'];
                         let no2 = components['no2'];
                         let no2Percent = no2 / 400;
                         let o3 = components['o3'];
@@ -45,7 +44,7 @@ $(document).ready(function () {
                         let pm10Percent = pm10 / 180;
                         a = aqi;
 
-                        // przekaznie elementów do index.html i index2.html
+                        // passing air pollution level to index.html and index2.html
                         document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";
                         document.getElementById("no2").innerHTML = no2Percent + "%";
                         document.getElementById("pm10").innerHTML = pm10Percent + "%";
