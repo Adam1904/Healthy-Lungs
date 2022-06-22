@@ -1,6 +1,7 @@
 $(document).ready(function () {
     (() => {
             const message = document.querySelector('#message');
+            const search = document.getElementById("city-search");
             const api_key = "f9911c4c17c1f82709e7ffa49cf4ae30";
             var cities = null;
             fetch("../static/scripts/cities.json")
@@ -9,17 +10,17 @@ $(document).ready(function () {
                 })
                 .then(function (data) {
                     cities = data;
-                    setTimeout(wczytanielisty,1000);
+                    setTimeout(wczytanielisty, 1000);
                 })
             var cityList = new Array();
-            function wczytanielisty(){
+
+            function wczytanielisty() {
                 for (i = 0; i < cities.length; i++) {
-                cityList.push(cities[i]['name']);
+                    cityList.push(cities[i]['name']);
+                }
             }
-            }
-            $("#city-search").autocomplete({
-                source: cityList
-            });
+
+
             // check if the Geolocation API is supported
             if (!navigator.geolocation) {
                 message.textContent = `Your browser doesn't support Geolocation`;
@@ -51,10 +52,15 @@ $(document).ready(function () {
                 onSuccess(lat, lon)
             });
 
-            const search = document.getElementById("city-search");
+
             search.addEventListener("keypress", function (event) {
                 if (event.key === "Enter") {
                     btn.click();
+                }
+                if (search.value.length >= 4) {
+                    $("#city-search").autocomplete({
+                        source: cityList
+                    })
                 }
 
             });
