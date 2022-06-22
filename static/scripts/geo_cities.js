@@ -68,7 +68,7 @@ $(document).ready(function () {
                 // Making history
                 const start = Date.now() - 604800;
                 const end = Date.now();
-                const urlH = `https://api.openweathermap.org/data/2.5/air_pollution/history?lat=${latitude}&lon=${longitude}&start=${start}&end=${end}&appid=${api_key}`
+                const urlH = `https://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lon}&start=${start}&end=${end}&appid=${api_key}`
 
                 let outputH = fetch(urlH).then(result => result.json())
                     .then((data) => {
