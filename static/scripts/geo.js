@@ -46,10 +46,10 @@ $(document).ready(function () {
 
                         // passing air pollution level to index.html and index2.html
                         document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";
-                        document.getElementById("no2").innerHTML = no2Percent + "%";
-                        document.getElementById("pm10").innerHTML = pm10Percent + "%";
-                        document.getElementById("o3").innerHTML = o3Percent + "%";
-                        document.getElementById("pm25").innerHTML = pm25Percent + "%";
+                        document.getElementById("no2").innerHTML = no2;
+                        document.getElementById("pm10").innerHTML = pm10;
+                        document.getElementById("o3").innerHTML = o3;
+                        document.getElementById("pm25").innerHTML = pm2_5;
                     })
                 // Making history
 
