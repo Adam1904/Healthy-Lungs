@@ -26,10 +26,10 @@ $(document).ready(function () {
                 console.log(enteredCity);
                 var lat = null;
                 var lon = null;
-                for(const city in cities){
-                    if(enteredCity == city['name']){
-                        lat = city['lat'];
-                        lon = city['lat'];
+                for(i=0;i<cities.length;i++){
+                    if(enteredCity == cities[i]['name']){
+                        lat = cities[i]['lat'];
+                        lon = cities[i]['lat'];
                     }
                 }
                 if(lat == null || lon == null){
