@@ -66,7 +66,10 @@ $(document).ready(function () {
                         document.getElementById("pm25").innerHTML = pm2_5;
                     })
                 // Making history
-                const start = Date.now() - 604800;
+                let start = new Date();
+                start.setDate(start.getDate()-7);
+                start = Math.floor(start.getTime()/1000);
+                console.log(start);
                 const end = Date.now();
                 const urlH = `https://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lon}&start=${start}&end=${end}&appid=${api_key}`
 
