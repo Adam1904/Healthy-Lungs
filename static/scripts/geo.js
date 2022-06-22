@@ -35,14 +35,19 @@ $(document).ready(function () {
                         let aqi = data['list'][0]['main']['aqi'];
                         let components = data['list'][0]['components'];
                         let no2 = components['no2'];
-                        let no2Percent = (no2 / 400).toFixed(2);
+                        let no2Percent = (no2 / 4).toFixed(2);
                         let o3 = components['o3'];
-                        let o3Percent = (o3 / 240).toFixed(2);
+                        let o3Percent = (o3 / 2.4).toFixed(2);
                         let pm2_5 = components['pm2_5'];
-                        let pm25Percent = (pm2_5 / 110).toFixed(2);
+                        let pm25Percent = (pm2_5 / 1.1).toFixed(2);
                         let pm10 = components['pm10'];
-                        let pm10Percent = (pm10 / 180).toFixed(2);
+                        let pm10Percent = (pm10 / 1.8).toFixed(2);
                         a = aqi;
+
+                        document.getElementById("pb_no2_now").style.width = no2Percent + "%"
+                        document.getElementById("pb_pm10_now").style.width = pm10Percent + "%"
+                        document.getElementById("pb_o3_now").style.width = o3Percent + "%"
+                        document.getElementById("pb_pm25_now").style.width = pm25Percent + "%"
 
                         // passing air pollution level to index.html and index2.html
                         document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";
@@ -64,14 +69,19 @@ $(document).ready(function () {
                         let aqi = data['list'][0]['main']['aqi'];
                         let components = data['list'][0]['components'];
                         let no2 = components['no2'];
-                        let no2Percent = (no2 / 400).toFixed(2);
+                        let no2Percent = (no2 / 4).toFixed(2);
                         let o3 = components['o3'];
-                        let o3Percent = (o3 / 240).toFixed(2);
+                        let o3Percent = (o3 / 2.4).toFixed(2);
                         let pm2_5 = components['pm2_5'];
-                        let pm25Percent = (pm2_5 / 110).toFixed(2);
+                        let pm25Percent = (pm2_5 / 1.1).toFixed(2);
                         let pm10 = components['pm10'];
-                        let pm10Percent = (pm10 / 180).toFixed(2);
+                        let pm10Percent = (pm10 / 1.8).toFixed(2);
                         a = aqi;
+
+                        document.getElementById("pb_no2_mean").style.width = no2Percent + "%"
+                        document.getElementById("pb_pm10_mean").style.width = pm10Percent + "%"
+                        document.getElementById("pb_o3_mean").style.width = o3Percent + "%"
+                        document.getElementById("pb_pm25_mean").style.width = pm25Percent + "%"
 
                         document.getElementById("no2mean").innerHTML = no2;
                         document.getElementById("pm10mean").innerHTML = pm10;
