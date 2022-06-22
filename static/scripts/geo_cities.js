@@ -22,6 +22,7 @@ $(document).ready(function () {
             const btn = document.querySelector('#search');
             btn.addEventListener('click', function () {
                 // get the position of selected city
+                message.textContent = ""
                 enteredCity = document.getElementById("city-search").value;
                 console.log(enteredCity);
                 var lat = null;
