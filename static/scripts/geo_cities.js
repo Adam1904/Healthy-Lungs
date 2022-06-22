@@ -18,7 +18,7 @@ $(document).ready(function () {
                 return;
             }
 
-            // handle click event - choose location
+            // handle click event choose location
             const btn = document.querySelector('#search');
             btn.addEventListener('click', function () {
                 // get the position of selected city
