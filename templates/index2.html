@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="shortcut icon" type="x-icon"  href="{{ url_for('static',filename='/images/logo.png') }}s">
+	<link rel="shortcut icon" type="x-icon"  href="{{ url_for('static',filename='/images/logo.png') }}">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="{{ url_for('static',filename='/styles/main.css') }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
 				<div class="top_bar">
 					<nav class="nav">
 						<ul>
-							<li><a href="{{ url_for('home') }}">Yours location</a></li>
+							<li><a href="{{ url_for('home') }}">Your location</a></li>
 							<li><a href="{{ url_for('choose_location') }}">Choose location</a></li>
 						</ul>
 					</nav>

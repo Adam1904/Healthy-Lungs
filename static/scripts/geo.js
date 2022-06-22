@@ -10,7 +10,7 @@ $(document).ready(function () {
                 return;
             }
 
-            // handle click event yours location
+            // handle click event your location
             const btn = document.querySelector('#button-location');
             btn.addEventListener('click', function () {
                 // get the current position
