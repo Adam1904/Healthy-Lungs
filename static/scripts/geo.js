@@ -47,8 +47,8 @@ $(document).ready(function () {
 
                         // przekaznie elementów do index.html i index2.html
                         document.getElementById("lungs").src = "../static/images/lungs" + a + ".png";
-                        element_no2 = document.getElementById("no2").src;
-                        element_no2.textContent = no2Percent + "%";
+                        document.getElementById("no2").innerHTML = no2Percent + "%";
+
                         element_pm10 = document.getElementById("pm10").src;
                         element_pm10.textContent = pm10Percent + "%";
                         element_o3 = document.getElementById("o3").src;
