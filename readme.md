@@ -13,7 +13,7 @@
 </p>
 
 ## Website view ⛰️
-- [page view](https://github.com/AdamPiszczek/Healthy-Lungs/blob/main/static/images/page_view.gif)
+![page view](https://github.com/AdamPiszczek/Healthy-Lungs/blob/main/static/images/page_view.gif)
 
 ## Setup 🛠️
 - Linux 🐧 / macOS 🍎 version
